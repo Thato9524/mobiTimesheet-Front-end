@@ -9,7 +9,11 @@ import Calendar from '../components/Calander';
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (
     <View style={styles.container}>
-     < Calendar someDefaultValue={''}/>
+      <View style={styles.calander}>
+      < Calendar someDefaultValue={''}/>
+      </View>
+      {/* <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" /> */}
+    <EditScreenInfo path="/screens/TabOneScreen.tsx" />
     </View>
   );
 }
@@ -31,4 +35,13 @@ const styles = StyleSheet.create({
     height: 1,
     width: '80%',
   },
+  calander:{
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor:'black',
+    bottom:90
+
+
+  }
 });
