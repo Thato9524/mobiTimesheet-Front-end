@@ -10,7 +10,7 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 import useColorScheme from '../hooks/useColorScheme';
 import { Ionicons } from '@expo/vector-icons';
 
-export default function TabOneScreen({ navigation }: RootTabScreenProps<'Home'>) {
+export default function Login({ navigation }: RootTabScreenProps<'Login'>) {
   const colorScheme = useColorScheme();
   return (
     <View style={styles.container}>
