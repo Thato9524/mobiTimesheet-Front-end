@@ -3,13 +3,13 @@
  * https://reactnavigation.org/docs/getting-started
  *
  */
-import { FontAwesome, MaterialIcons,Feather,AntDesign} from '@expo/vector-icons';
+import { FontAwesome, MaterialIcons,Feather,AntDesign,Entypo,MaterialCommunityIcons,EvilIcons} from '@expo/vector-icons';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
+import { NavigationContainer, DefaultTheme, DarkTheme, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
-import { ColorSchemeName, Pressable,Text,View } from 'react-native';
+import { ColorSchemeName, Pressable,Text,View,Alert } from 'react-native';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
@@ -59,10 +59,25 @@ const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
 function BottomTabNavigator() {
   const colorScheme = useColorScheme();
+  const navigation = useNavigation();
+  const createTwoButtonAlert = () =>
+      Alert.alert(
+        "Sign Out",
+        "Do you wish to sign out?",
+        [
+          {
+            text: "Cancel",
+            onPress: () => console.log("Cancel Pressed"),
+            style: "cancel"
+          },
+          { text: "Yes", onPress: () =>  navigation.navigate('Login')}
+        ]
+      );
+  
 
   return (
     <BottomTab.Navigator
-    initialRouteName="Login"
+    initialRouteName="Home"
     screenOptions={{
       tabBarStyle: {position: 'absolute',bottom: "6%", 
       left:"3%",right:"3%",elevation:0,backgroundColor:"#ffffff",borderRadius:15,height:"7%"},
@@ -72,11 +87,16 @@ function BottomTabNavigator() {
     >
 
       <BottomTab.Screen name='Login'component={LoginScreen}
-        options={({ navigation }: RootTabScreenProps<'Login'>) => ({
-          title: 'logout',
+        options={() => ({
+          tabBarStyle: {
+            display: "none"
+          },
+          title: 'login',
           tabBarIcon: ({ color }) => (
           <View style={{alignItems: 'center',flex:1}}>
+          <Pressable onPress={() => createTwoButtonAlert()}>
           <Feather name="log-out" size={29} color="black" />
+          </Pressable>
           <Text style={{fontSize:10,top:"20%"}}>Sign Out</Text>
           </View>
           ),
@@ -96,18 +116,22 @@ function BottomTabNavigator() {
        options={({ navigation }: RootTabScreenProps<'Add'>) => ({
         title: 'Add Entry',
         tabBarIcon: ({ color }) => (
-        <View style={{alignItems: 'center'}}>
-        <AntDesign name="pluscircle" size={40} color="tomato" />
-        <Text style={{fontSize:12,}}>Add Entry</Text>
+        <View style={{alignItems: 'center',bottom:"50%", backgroundColor: 'tomato',borderRadius:30,borderWidth:2}}>
+        <Pressable
+        onPress={() => navigation.navigate('Modal')}>
+       <FontAwesome style={{top:"6%"}} name="plus-square" size={35} color="black"  />
+       </Pressable>
+        <Text style={{fontSize:12,top:"20%"}}>Add Entry</Text>
         </View>),
       })}/>
       <BottomTab.Screen name='TabTwo'component={TabTwoScreen}
       options={({ navigation }: RootTabScreenProps<'TabTwo'>) => ({
         tabBarIcon: ({ color }) =>(
           <View style={{alignItems: 'center',flex:1}}>
-          <Feather name="settings" size={29} color="black" />
+          <Feather name="settings" size={27} color="black" />
           <Text style={{fontSize:10,top:"20%"}}>Settings</Text>
-           </View>)
+           </View>
+           )
       })}/>
       <BottomTab.Screen name='More'component={MoreScreen}
       options={({ navigation }: RootTabScreenProps<'More'>) => ({
@@ -122,90 +146,8 @@ function BottomTabNavigator() {
       })}/>
 
      </BottomTab.Navigator>
-    //   initialRouteName="TabOne"
-    //   screenOptions={{
-    //     tabBarActiveTintColor: Colors[colorScheme].tint,
-    //   }}>
-    //   <BottomTab.Screen
-    //     name="TabOne"
-    //     component={TabOneScreen}
-    //     options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
-    //       title: 'Home',
-    //       tabBarIcon: ({ color }) => <MaterialIcons name="menu" size={24} color={Colors[colorScheme].text} />,
-    //       headerRight: () => (
-    //         <Pressable
-    //           onPress={() => navigation.navigate('Modal')}
-    //           style={({ pressed }) => ({
-    //             opacity: pressed ? 0.5 : 1,
-    //           })}>
-    //           <FontAwesome
-    //             name="info-circle"
-    //             size={27}
-    //             color={Colors[colorScheme].text}
-    //             style={{ marginRight: 15 }}
-    //           />
-    //         </Pressable>
-    //       ),
-    //       headerLeft: () => (
-    //         <Pressable
-    //           onPress={() => navigation.navigate('Modal')}
-    //           style={({ pressed }) => ({
-    //             opacity: pressed ? 0.5 : 1,
-    //             left:10
-    //           })}>
-    //             <MaterialIcons name="menu" size={24} color={Colors[colorScheme].text}
-    //             style={{ marginRight: 15 }} />
-    //         </Pressable>
-    //       ),
-         
-    //     })}
-    //   />
-    //   <BottomTab.Screen
-    //     name="TabTwo"
-    //     component={TabTwoScreen}
-    //     options={{
-    //       title: 'Tab Two',
-    //       tabBarIcon: ({ color }) => <TabBarIcon name="retweet" color={color} />,
-          
-    //     }}
-    //   />
-    //   <BottomTab.Screen
-    //     name="TabThree"
-    //     component={ModalScreen}
-    //     options={({ navigation }: RootTabScreenProps<'TabThree'>) => ({
-    //       title: 'Add',
-    //       tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-    //       addicon: () => (
-    //         <Pressable
-    //           onPress={() => navigation.navigate('Modal')}
-    //           style={({ pressed }) => ({
-    //             opacity: pressed ? 0.5 : 1,
-    //           })}>
-    //           <FontAwesome
-    //             name="info-circle"
-    //             size={25}
-    //             color={Colors[colorScheme].text}
-    //             style={{ marginRight: 15 }}
-    //           />
-    //         </Pressable>
-    //       ),
-    //     })}
-    //   />
-      
-    // </BottomTab.Navigator>
   );
 }
 
-/**
- * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
- */
-// function TabBarIcon(props: {
-//   name: React.ComponentProps<typeof FontAwesome>['name'];
-//   color: string;
-// }) {
-//   return <FontAwesome size={30} style={{ marginBottom: -3 }} {...props} />;
-// }
-// function createModalNavigator<T>() {
-//   throw new Error('Function not implemented.');
-// }
+
 
