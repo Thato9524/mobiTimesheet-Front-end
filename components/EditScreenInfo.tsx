@@ -15,17 +15,10 @@ export default function EditScreenInfo() {
     <View>
       <View style={styles.getStartedContainer}>
         <Text
-          style={styles.getStartedText}
-          lightColor="rgba(0,0,0,0.8)"
-          darkColor="rgba(255,255,255,0.8)">
+          style={styles.getStartedText}>
           Timesheet History:
-        </Text>
-        <View style={{}}>
-        {/* <TimesheetHistory/>  */}
-        </View>       
+        </Text>     
       </View>
-
-      
     </View>
   );
 }

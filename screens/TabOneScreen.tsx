@@ -17,34 +17,9 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'Home'>)
       <View style={styles.calander}>
       < Calendar someDefaultValue={''}/>
       </View>
-     
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-     
     <View style={styles.timesheetHistory}>
     <EditScreenInfo />
     </View>
-    {/* <View >
-    
-    <Pressable
-              
-              onPress={() => navigation.navigate('Modal')}
-              style={({ pressed }) => ({
-                width:20,
-                opacity: pressed ? 0.5 : 1,
-                top:16
-              })}>
-                <View style={{ width: 54 }}>
-                <Ionicons name="add-circle-outline" size={54} color="black" />
-                </View>
-              {/* <FontAwesome
-                name="plus-circle"
-                size={55}
-                color={Colors[colorScheme].text}
-                style={{ margin:1 }}
-                
-              /> */}
-            {/* </Pressable>
-    </View> */} 
     </View>
   );
 }
@@ -75,14 +50,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor:'black',
     bottom:90,
-    marginBottom:90,
+    marginBottom:"65%",
     
 },
   timesheetHistory:{
-    
+    borderWidth: 14,
     alignItems: 'center',
     justifyContent: 'center',
-    bottom:"35%",
+    bottom:"45%",
     width: '100%',
     
     

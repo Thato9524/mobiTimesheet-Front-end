@@ -17,6 +17,7 @@ export default class App extends React.Component<IMyComponentProps, any>  {
     super(props);
     this.state = {
       selectedStartDate: new Date(),
+     
     };
     this.onDateChange = this.onDateChange.bind(this);
   }
@@ -27,13 +28,18 @@ export default class App extends React.Component<IMyComponentProps, any>  {
     });
   }
   render() {
-    const { selectedStartDate } = this.state;
+    const { selectedStartDate, } = this.state;
     const startDate = selectedStartDate ? selectedStartDate.toString() : '';
+  
+    
     return (
       <View style={styles.container}>
-        <CalendarPicker
+        <CalendarPicker 
+        selectedDayColor="tomato"
+         disabledDates={ [this.state.selected]}
           onDateChange={this.onDateChange}
         />
+
 
         <View>
           <Text>SELECTED DATE:{ startDate }</Text>

@@ -44,7 +44,7 @@ function RootNavigator() {
       <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
-        <Stack.Screen name="Modal" component={ModalScreen} />
+        <Stack.Screen name="AddEntry" component={ModalScreen} />
       </Stack.Group>
     </Stack.Navigator>
   );
@@ -80,7 +80,7 @@ function BottomTabNavigator() {
     initialRouteName="Home"
     screenOptions={{
       tabBarStyle: {position: 'absolute',bottom: "6%", 
-      left:"3%",right:"3%",elevation:0,backgroundColor:"#ffffff",borderRadius:15,height:"7%"},
+      left:"3%",right:"3%",elevation:0,backgroundColor:"#ffffff",borderRadius:15,height:"7%",borderWidth:1,borderTopColor:"black",borderTopWidth:1},
       tabBarShowLabel: false
 
     }}
@@ -114,11 +114,10 @@ function BottomTabNavigator() {
       })}/>
       <BottomTab.Screen name='Add'component={ModalScreen}
        options={({ navigation }: RootTabScreenProps<'Add'>) => ({
-        title: 'Add Entry',
         tabBarIcon: ({ color }) => (
         <View style={{alignItems: 'center',bottom:"50%", backgroundColor: 'tomato',borderRadius:30,borderWidth:2}}>
         <Pressable
-        onPress={() => navigation.navigate('Modal')}>
+        onPress={() => navigation.navigate('AddEntry')}>
        <FontAwesome style={{top:"6%"}} name="plus-square" size={35} color="black"  />
        </Pressable>
         <Text style={{fontSize:12,top:"20%"}}>Add Entry</Text>
@@ -128,7 +127,7 @@ function BottomTabNavigator() {
       options={({ navigation }: RootTabScreenProps<'TabTwo'>) => ({
         tabBarIcon: ({ color }) =>(
           <View style={{alignItems: 'center',flex:1}}>
-          <Feather name="settings" size={27} color="black" />
+          <Feather name="settings" size={27} color="black"  />
           <Text style={{fontSize:10,top:"20%"}}>Settings</Text>
            </View>
            )
