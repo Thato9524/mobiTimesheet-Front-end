@@ -45,7 +45,7 @@ function RootNavigator() {
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="AddEntry" component={ModalScreen} />
-        <Stack.Screen name="Submission" component={SubmissionScreen} />
+        <Stack.Screen name="Submissions" component={SubmissionScreen} />
         <Stack.Screen name="settings" component={TabTwoScreen} />
       </Stack.Group>
     </Stack.Navigator>
@@ -130,7 +130,7 @@ function BottomTabNavigator() {
           tabBarIcon: ({ color }) => (
           <View style={{alignItems: 'center',flex:1}}>
             <Pressable 
-            onPress={() => navigation.navigate('Submission')}>
+            onPress={() => navigation.navigate('Submissions')}>
           <Ionicons style={{top:"6%" ,left:"17%"}} name="document-attach-outline" size={27} color="black" />
           <Text style={{fontSize:10,top:"20%"}}>Submission</Text>
           </Pressable>

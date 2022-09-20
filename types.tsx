@@ -18,6 +18,8 @@ export type RootStackParamList = {
   AddEntry: undefined;
   NotFound: undefined;
   Login: undefined;
+  Submissions: undefined;
+  settings: undefined;
 };
 
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> = NativeStackScreenProps<
@@ -31,7 +33,7 @@ export type RootTabParamList = {
   TabThree: undefined;
   settings: undefined;
   Add: undefined;
-  More: undefined;
+  Submission: undefined;
   Login: undefined;
 };
 
