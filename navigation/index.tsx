@@ -3,7 +3,7 @@
  * https://reactnavigation.org/docs/getting-started
  *
  */
-import { FontAwesome, MaterialIcons,Feather,AntDesign,Entypo,MaterialCommunityIcons,EvilIcons} from '@expo/vector-icons';
+import { FontAwesome, MaterialIcons,Feather,AntDesign,Entypo,MaterialCommunityIcons,EvilIcons,Ionicons} from '@expo/vector-icons';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer, DefaultTheme, DarkTheme, useNavigation } from '@react-navigation/native';
@@ -18,7 +18,7 @@ import NotFoundScreen from '../screens/NotFoundScreen';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import LoginScreen from '../screens/LoginScreen';
-import MoreScreen from '../screens/MoreScreen';
+import SubmissionScreen from '../screens/SubmissionScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 
@@ -45,6 +45,8 @@ function RootNavigator() {
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="AddEntry" component={ModalScreen} />
+        <Stack.Screen name="Submission" component={SubmissionScreen} />
+        <Stack.Screen name="settings" component={TabTwoScreen} />
       </Stack.Group>
     </Stack.Navigator>
   );
@@ -108,7 +110,7 @@ function BottomTabNavigator() {
         tabBarIcon: ({ color }) => (
         <View style={{alignItems: 'center',flex:1}}>
         <AntDesign name="home" size={29} color="black" />
-        <Text style={{fontSize:10,top:"20%"}}>Home</Text>
+        <Text style={{fontSize:10,top:"22%"}}>Home</Text>
         </View>),
        
       })}/>
@@ -118,30 +120,35 @@ function BottomTabNavigator() {
         <View style={{alignItems: 'center',bottom:"50%", backgroundColor: 'tomato',borderRadius:30,borderWidth:2}}>
         <Pressable
         onPress={() => navigation.navigate('AddEntry')}>
-       <FontAwesome style={{top:"6%"}} name="plus-square" size={35} color="black"  />
+       <FontAwesome style={{top:"6%" ,left:"17%"}} name="plus-square" size={35} color="black"  />
+        <Text style={{fontSize:12,top:"25%"}}>Add Entry</Text>
        </Pressable>
-        <Text style={{fontSize:12,top:"20%"}}>Add Entry</Text>
         </View>),
       })}/>
+        <BottomTab.Screen name='Submission'component={SubmissionScreen}
+        options={({ navigation }: RootTabScreenProps<'Submission'>) => ({
+          tabBarIcon: ({ color }) => (
+          <View style={{alignItems: 'center',flex:1}}>
+            <Pressable 
+            onPress={() => navigation.navigate('Submission')}>
+          <Ionicons style={{top:"6%" ,left:"17%"}} name="document-attach-outline" size={27} color="black" />
+          <Text style={{fontSize:10,top:"20%"}}>Submission</Text>
+          </Pressable>
+          </View>),
+          
+  
+        })}/>
       <BottomTab.Screen name='TabTwo'component={TabTwoScreen}
       options={({ navigation }: RootTabScreenProps<'TabTwo'>) => ({
         tabBarIcon: ({ color }) =>(
           <View style={{alignItems: 'center',flex:1}}>
-          <Feather name="settings" size={27} color="black"  />
-          <Text style={{fontSize:10,top:"20%"}}>Settings</Text>
+            <Pressable
+             onPress={() => navigation.navigate('settings')}>
+          <Feather  style={{top:"10%" }} name="settings" size={27} color="black"  />
+          </Pressable>
+          <Text style={{fontSize:10,top:"29%"}}>Settings</Text>
            </View>
            )
-      })}/>
-      <BottomTab.Screen name='More'component={MoreScreen}
-      options={({ navigation }: RootTabScreenProps<'More'>) => ({
-        title: 'More',
-        tabBarIcon: ({ color }) => (
-        <View style={{alignItems: 'center',flex:1}}>
-        <MaterialIcons name="menu" size={30} color={Colors[colorScheme].text} />
-        <Text style={{fontSize:10,top:"20%"}}>More</Text>
-        </View>),
-        
-
       })}/>
 
      </BottomTab.Navigator>
