@@ -12,22 +12,21 @@ import TimesheetHistory from './TImesheethistory';
 export default function EditScreenInfo() {
 
   return (
-    <View>
-      <View style={styles.getStartedContainer}>
-        <Text
-          style={styles.getStartedText}>
-          Timesheet History:
-        </Text>     
-      </View>
+    <View >
+      
+      <Text>
+         No Entries
+        </Text>  
+      
     </View>
   );
 }
 
-function handleHelpPress() {
-  WebBrowser.openBrowserAsync(
-    'https://docs.expo.io/get-started/create-a-new-app/#opening-the-app-on-your-phonetablet'
-  );
-}
+// function handleHelpPress() {
+//   WebBrowser.openBrowserAsync(
+//     'https://docs.expo.io/get-started/create-a-new-app/#opening-the-app-on-your-phonetablet'
+//   );
+// }
 
 const styles = StyleSheet.create({
   getStartedContainer: {
@@ -51,6 +50,14 @@ const styles = StyleSheet.create({
     fontSize: 17,
     lineHeight: 24,
     textAlign: 'center',
+    
+  },
+  historyBox: {
+    fontSize: 17,
+    textAlign: 'center',
+    borderWidth:2,
+    top:"10%",
+    height:"9%",
     
   },
   helpContainer: {

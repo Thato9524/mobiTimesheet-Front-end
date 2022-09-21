@@ -99,7 +99,7 @@ function BottomTabNavigator() {
           <Pressable onPress={() => createTwoButtonAlert()}>
           <Feather name="log-out" size={29} color="black" />
           </Pressable>
-          <Text style={{fontSize:10,top:"20%"}}>Sign Out</Text>
+          <Text style={{fontSize:12,top:"20%"}}>Sign Out</Text>
           </View>
           ),
          
@@ -110,14 +110,14 @@ function BottomTabNavigator() {
         tabBarIcon: ({ color }) => (
         <View style={{alignItems: 'center',flex:1}}>
         <AntDesign name="home" size={29} color="black" />
-        <Text style={{fontSize:10,top:"22%"}}>Home</Text>
+        <Text style={{fontSize:12,top:"22%"}}>Home</Text>
         </View>),
        
       })}/>
       <BottomTab.Screen name='Add'component={ModalScreen}
        options={({ navigation }: RootTabScreenProps<'Add'>) => ({
         tabBarIcon: ({ color }) => (
-        <View style={{alignItems: 'center',bottom:"50%", backgroundColor: 'tomato',borderRadius:30,borderWidth:2}}>
+        <View style={{alignItems: 'center',bottom:"50%", backgroundColor: '#f43f5e',borderRadius:30,borderWidth:2}}>
         <Pressable
         onPress={() => navigation.navigate('AddEntry')}>
        <FontAwesome style={{top:"6%" ,left:"17%"}} name="plus-square" size={35} color="black"  />
@@ -131,8 +131,8 @@ function BottomTabNavigator() {
           <View style={{alignItems: 'center',flex:1}}>
             <Pressable 
             onPress={() => navigation.navigate('Submissions')}>
-          <Ionicons style={{top:"6%" ,left:"17%"}} name="document-attach-outline" size={27} color="black" />
-          <Text style={{fontSize:10,top:"20%"}}>Submission</Text>
+          <Ionicons style={{top:"6%" ,right:"1%"}} name="document-attach-outline" size={30} color="black" />
+          <Text style={{fontSize:12,top:"10%"}}>Leave</Text>
           </Pressable>
           </View>),
           
@@ -144,9 +144,9 @@ function BottomTabNavigator() {
           <View style={{alignItems: 'center',flex:1}}>
             <Pressable
              onPress={() => navigation.navigate('settings')}>
-          <Feather  style={{top:"10%" }} name="settings" size={27} color="black"  />
+          <Feather  style={{top:"10%",left:"7%" }} name="settings" size={27} color="black"  />
+          <Text style={{fontSize:12,top:"20%"}}>Settings</Text>
           </Pressable>
-          <Text style={{fontSize:10,top:"29%"}}>Settings</Text>
            </View>
            )
       })}/>

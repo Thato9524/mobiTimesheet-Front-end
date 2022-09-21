@@ -1,16 +1,22 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import EditScreenInfo from '../components/EditScreenInfo';
+import LeaveSubmission from "../components/LeaveSubmission";
+import Datepicker from "../components/Datepicker";
 import { Text, View } from '../components/Themed';
 
-export default function TabTwoScreen() {
+export default function SubmissionScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab Two</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo />
+      
+      <View >
+        <LeaveSubmission/>
+      </View>
+      <View ><Text style={styles.title}>Leave Type:</Text></View>
+      <View><Datepicker/></View>
     </View>
+    
+    
   );
 }
 
@@ -21,12 +27,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    fontSize: 20,
-    fontWeight: 'bold',
+    fontSize: 13,
+    bottom:"1900%",
+    color:"#f43f5e"
+    
   },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
+  
 });
+

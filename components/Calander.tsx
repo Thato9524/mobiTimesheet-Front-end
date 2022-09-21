@@ -35,10 +35,11 @@ export default class App extends React.Component<IMyComponentProps, any>  {
     return (
       <View style={styles.container}>
         <CalendarPicker 
-        selectedDayColor="tomato"
+        selectedDayColor="#f43f5e"
          disabledDates={ [this.state.selected]}
           onDateChange={this.onDateChange}
         />
+        
 
 
         <View>
