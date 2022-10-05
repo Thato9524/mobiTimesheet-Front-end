@@ -14,7 +14,7 @@ export default function EditScreenInfo() {
   return (
     <View >
       
-      <Text>
+      <Text style={styles.text}>
          No Entries
         </Text>  
       
@@ -29,46 +29,9 @@ export default function EditScreenInfo() {
 // }
 
 const styles = StyleSheet.create({
-  getStartedContainer: {
-    alignItems: 'center',
-    marginHorizontal: 50,
-  },
-  homeScreenFilename: {
-    marginVertical: 7,
-  },
-  codeHighlightContainer: {
-    borderRadius: 3,
-    paddingHorizontal: 4,
-  },
-  noinfoalert: {
-    fontSize: 17,
-    lineHeight: 24,
-    textAlign: 'center',
-    top:30
-  },
-  getStartedText: {
-    fontSize: 17,
-    lineHeight: 24,
-    textAlign: 'center',
-    
-  },
-  historyBox: {
-    fontSize: 17,
-    textAlign: 'center',
-    borderWidth:2,
-    top:"10%",
-    height:"9%",
-    
-  },
-  helpContainer: {
-    marginTop: 15,
-    marginHorizontal: 20,
-    alignItems: 'center',
-  },
-  helpLink: {
-    paddingVertical: 15,
-  },
-  helpLinkText: {
-    textAlign: 'center',
+ 
+  
+  text: {
+    backgroundColor:"#F1EDEE"
   },
 });

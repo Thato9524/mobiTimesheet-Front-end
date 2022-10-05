@@ -1,22 +1,25 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
+import Setting from '../components/Setting';
 
-import LeaveSubmission from "../components/LeaveSubmission";
+
 import { Text, View } from '../components/Themed';
 
 export default function TabTwoScreen() {
   return (
     <View style={styles.container}>
       <View >
-        <LeaveSubmission/>
+        <Setting style={styles.Notifications}/>
+        <Setting style={styles.DarkMode}/>
       </View>
+      
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -24,9 +27,13 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
   },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
+  Notifications: {
+    
+    top:"30%"
   },
+  DarkMode: {
+    bottom:"10%",left:"10%"
+    
+  },
+
 });

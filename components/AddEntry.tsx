@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     bottom:"18.7%",
     borderRadius:5,
     borderWidth: 1,
-    backgroundColor: "#CFDAC0"
+    backgroundColor: "#52A051"
     
     
   },
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
     borderRadius:5,
     borderWidth: 1,
     
-    backgroundColor: "#E68D99"
+    backgroundColor: "#C91959"
   },
   NoteText: {
     color: 'black',
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
   },
   SubmittButton: {
       borderRadius:15,
-      backgroundColor:"#f43f5e",
+      backgroundColor:"#D6153F",
       width: "30%",
       height: "5%",
       borderWidth: 2,

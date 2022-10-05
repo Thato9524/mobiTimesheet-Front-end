@@ -9,7 +9,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer, DefaultTheme, DarkTheme, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
-import { ColorSchemeName, Pressable,Text,View,Alert } from 'react-native';
+import { ColorSchemeName, Pressable,Text,View,Alert,StyleSheet, Platform } from 'react-native';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
@@ -99,7 +99,7 @@ function BottomTabNavigator() {
           <Pressable onPress={() => createTwoButtonAlert()}>
           <Feather name="log-out" size={29} color="black" />
           </Pressable>
-          <Text style={{fontSize:12,top:"20%"}}>Sign Out</Text>
+          <Text style={styles.SignOutText}>Sign Out</Text>
           </View>
           ),
          
@@ -110,20 +110,20 @@ function BottomTabNavigator() {
         tabBarIcon: ({ color }) => (
         <View style={{alignItems: 'center',flex:1}}>
         <AntDesign name="home" size={29} color="black" />
-        <Text style={{fontSize:12,top:"22%"}}>Home</Text>
+        <Text style={styles.HomeText}>Home</Text>
         </View>),
        
       })}/>
       <BottomTab.Screen name='Add'component={ModalScreen}
        options={({ navigation }: RootTabScreenProps<'Add'>) => ({
         tabBarIcon: ({ color }) => (
-        <View style={{alignItems: 'center',bottom:"50%", backgroundColor: '#f43f5e',borderRadius:30,borderWidth:2}}>
+        <View style={styles.AddEntryContainer}>
         <Pressable
         onPress={() => navigation.navigate('AddEntry')}>
-       <FontAwesome style={{top:"6%" ,left:"17%"}} name="plus-square" size={35} color="black"  />
-        <Text style={{fontSize:12,top:"25%"}}>Add Entry</Text>
+       <FontAwesome style={styles.AddEntryIcon} name="plus-square" size={35} color="black"  />
+        <Text style={styles.AddEntryText}>Add Entry</Text>
        </Pressable>
-        </View>),
+        </View>), 
       })}/>
         <BottomTab.Screen name='Submission'component={SubmissionScreen}
         options={({ navigation }: RootTabScreenProps<'Submission'>) => ({
@@ -154,6 +154,99 @@ function BottomTabNavigator() {
      </BottomTab.Navigator>
   );
 }
+const styles = StyleSheet.create({
+  AddEntryContainer:{
+    ...Platform.select({
+      ios: {
+        alignItems: 'center',
+        bottom:"50%",
+        backgroundColor: '#D6153F',
+        borderRadius:30,
+        borderWidth:2
+      },
+      android: {
+        alignItems: 'center',
+        bottom:"50%",
+        backgroundColor: '#D6153F',
+        borderRadius:30,
+        borderWidth:2,
+    
+      },
+    })
+  },
+  AddEntryIcon:{
+
+    
+    ...Platform.select({
+      ios: {
+        top:"6%" ,
+    left:"17%"
+      },
+      android: {
+        top:"14%" ,
+        left:"20%"
+    
+      },
+    })
+  },
+  AddEntryText:{
+   
+    ...Platform.select({
+      ios: {
+        fontSize:12,
+        top:"25%"
+      },
+      android: {
+        fontSize:12,
+        top:"33%"
+    
+      },
+    })
+  },
+  HomeText:{
+   
+    ...Platform.select({
+      ios: {
+        fontSize:12,
+        top:"22%"
+      },
+      android: {
+        fontSize:12,
+        top:"13%"
+    
+      },
+    })
+  },
+  
+  HomeIcon:{
+   
+    ...Platform.select({
+      ios: {
+        fontSize:12,
+        top:"22%"
+      },
+      android: {
+        fontSize:12,
+        top:"13%"
+    
+      },
+    })
+  },SignOutText:{
+   
+    ...Platform.select({
+      ios: {
+        fontSize:12,
+        top:"22%"
+      },
+      android: {
+        fontSize:12,
+        top:"13%"
+    
+      },
+    })
+  },
+
+})
 
 
 

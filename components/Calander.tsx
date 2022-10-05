@@ -35,16 +35,17 @@ export default class App extends React.Component<IMyComponentProps, any>  {
     return (
       <View style={styles.container}>
         <CalendarPicker 
-        selectedDayColor="#f43f5e"
+        selectedDayColor="#D6153F"
+        height= {350}
          disabledDates={ [this.state.selected]}
           onDateChange={this.onDateChange}
         />
         
 
 
-        <View>
+        {/* <View>
           <Text>SELECTED DATE:{ startDate }</Text>
-        </View>
+        </View> */}
       </View>
     );
   }
@@ -55,5 +56,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#FFFFFF',
     marginTop: 100,
+    borderColor:"#D6153F",
+    borderWidth: 0.5,
+    
   },
 });
