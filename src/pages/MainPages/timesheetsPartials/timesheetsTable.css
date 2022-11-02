@@ -1,0 +1,15 @@
+.h-17{
+    height: 60vh;
+}
+
+@media screen and (min-width: 1280px) {
+    .h-17 {
+      height: 60vh;
+    }
+  }
+
+@media screen and (min-width: 1920px) {
+    .h-17 {
+      height: 70vh;
+    }
+  }
