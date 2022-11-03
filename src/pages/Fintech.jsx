@@ -63,9 +63,9 @@ function Fintech() {
     setHistorical(false);
     setLoading(true);
 
-    let organograms = await request.get(`${config.path.organogram.get}`);
+    //let organograms = await request.get(`${config.path.organogram.get}`);
    
-    setOrganogram(organograms);
+   // setOrganogram(organograms);
     let getBenchWarmers = await request.get(config.path.users.getBenchWarmers);
     if (!getBenchWarmers.err) {
       setBenchWarmers(getBenchWarmers);
