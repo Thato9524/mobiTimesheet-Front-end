@@ -8,7 +8,7 @@ import { LogLevel, AuthenticationScheme } from "@azure/msal-browser";
 export const msalConfig = {
   auth: {
     // clientId: "59bb2b16-0872-499b-aee2-d8bea7e761dc", // This is the ONLY mandatory field that you need to supply. // Testing
-    clientId: "eec39a6b-2cb9-4fe9-9cab-ad32fec3fe6d", // This is the ONLY mandatory field that you need to supply.
+    clientId: "00ec1a50-07a6-4d7a-ac32-807477a41666", // This is the ONLY mandatory field that you need to supply.
     authority:
       "https://login.microsoftonline.com/7748092c-54f8-4695-ac9f-d6114216c194", // Defaults to "https://login.microsoftonline.com/common"
     redirectUri: "/blank", // You must register this URI on Azure Portal/App Registration. Defaults to window.location.origin. REDIRECT TO BLANK
