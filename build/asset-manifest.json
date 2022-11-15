@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6b8f1e2d.chunk.css",
+    "main.js": "/static/js/main.b486527c.chunk.js",
+    "main.js.map": "/static/js/main.b486527c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.f58ee174.js",
+    "runtime-main.js.map": "/static/js/runtime-main.f58ee174.js.map",
+    "static/css/2.a0ad9055.chunk.css": "/static/css/2.a0ad9055.chunk.css",
+    "static/js/2.ff6e8172.chunk.js": "/static/js/2.ff6e8172.chunk.js",
+    "static/js/2.ff6e8172.chunk.js.map": "/static/js/2.ff6e8172.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.a0ad9055.chunk.css.map": "/static/css/2.a0ad9055.chunk.css.map",
+    "static/css/main.6b8f1e2d.chunk.css.map": "/static/css/main.6b8f1e2d.chunk.css.map",
+    "static/js/2.ff6e8172.chunk.js.LICENSE.txt": "/static/js/2.ff6e8172.chunk.js.LICENSE.txt",
+    "static/media/404-illustration.ee4d58f7.svg": "/static/media/404-illustration.ee4d58f7.svg",
+    "static/media/MicrosoftTeams-imageee3c608c5bf344a84d21d87ade4be7129ab0046cfda60b73fe847a83739942f0.c30401d5.png": "/static/media/MicrosoftTeams-imageee3c608c5bf344a84d21d87ade4be7129ab0046cfda60b73fe847a83739942f0.c30401d5.png",
+    "static/media/auth-decoration.33719348.png": "/static/media/auth-decoration.33719348.png",
+    "static/media/auth-image.e1185d65.jpg": "/static/media/auth-image.e1185d65.jpg",
+    "static/media/avatar-001.73a0bc1f.png": "/static/media/avatar-001.73a0bc1f.png",
+    "static/media/backArrow.d45b8a7a.svg": "/static/media/backArrow.d45b8a7a.svg",
+    "static/media/conference-svgrepo-com.77ec0ac4.png": "/static/media/conference-svgrepo-com.77ec0ac4.png",
+    "static/media/deal-svgrepo-com.7010efda.png": "/static/media/deal-svgrepo-com.7010efda.png",
+    "static/media/employees-group-svgrepo-com.d9c30a07.png": "/static/media/employees-group-svgrepo-com.d9c30a07.png",
+    "static/media/human-resources-search-svgrepo-com.d72d82f5.png": "/static/media/human-resources-search-svgrepo-com.d72d82f5.png",
+    "static/media/icon-03.f73068ec.svg": "/static/media/icon-03.f73068ec.svg",
+    "static/media/id-card-svgrepo-com.127f06a7.png": "/static/media/id-card-svgrepo-com.127f06a7.png",
+    "static/media/onboarding-image.9668c242.jpg": "/static/media/onboarding-image.9668c242.jpg",
+    "static/media/time-management-svgrepo-com.f082cc5d.png": "/static/media/time-management-svgrepo-com.f082cc5d.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f58ee174.js",
+    "static/css/2.a0ad9055.chunk.css",
+    "static/js/2.ff6e8172.chunk.js",
+    "static/css/main.6b8f1e2d.chunk.css",
+    "static/js/main.b486527c.chunk.js"
+  ]
+}
