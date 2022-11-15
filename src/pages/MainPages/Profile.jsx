@@ -185,7 +185,7 @@ function Profile() {
 
       // GET USER INFORMATION FOR PROFILE
       let getData = await request.get(
-        `${config.path.profile.getProfile}`,
+        `${config.path.profile.getProfile}/${_id}`,
         true
       );
       setPersonalData(getData);

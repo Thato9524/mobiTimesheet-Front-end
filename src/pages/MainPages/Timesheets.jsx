@@ -108,6 +108,7 @@ function Timesheets() {
         hours: parseFloat(getTimesheets.hours),
         recommended: getTimesheets.recommendedHours,
       });
+      console.log(getTimesheets)
       setBreakdown(getTimesheets.breakdown[0]);
       setDeclined(getTimesheets.declined);
       setTimesheetData(getTimesheets.timesheets);

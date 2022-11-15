@@ -1,7 +1,8 @@
 export default {
   //url: "https://api.portal.c3-dev-house.com/v1",
-  url: "http://uattc3backend.us-west-2.elasticbeanstalk.com/v1",
-  //url: "https://uat.api.portal.c3-dev-house.com/v1",
+  url: "https://silver-archery-368316.oa.r.appspot.com/v1",
+  //url: "http://localhost:3003/v1",
+  //
 
   path: {
     patchNotes: {
