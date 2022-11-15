@@ -7,7 +7,7 @@ import { LogLevel, AuthenticationScheme } from "@azure/msal-browser";
 //update
 export const msalConfig = {
   auth: {
-    clientId: "59bb2b16-0872-499b-aee2-d8bea7e761dc", // This is the ONLY mandatory field that you need to supply. // Testing
+    clientId: "d76cc0c9-ee25-4685-9cde-ae6d8902b825", // This is the ONLY mandatory field that you need to supply. // Testing
     //clientId: "00ec1a50-07a6-4d7a-ac32-807477a41666", // This is the ONLY mandatory field that you need to supply.
     authority:
       "https://login.microsoftonline.com/7748092c-54f8-4695-ac9f-d6114216c194", // Defaults to "https://login.microsoftonline.com/common"
