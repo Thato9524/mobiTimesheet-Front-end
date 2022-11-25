@@ -23,9 +23,7 @@ function SideBarAdmin({ sidebarOpen, setSidebarOpen }) {
   const sidebar = useRef(null);
 
   const storedSidebarExpanded = localStorage.getItem("sidebar-expanded");
-  const [sidebarExpanded, setSidebarExpanded] = useState(
-    storedSidebarExpanded === null ? false : storedSidebarExpanded === "true"
-  );
+  const [sidebarExpanded, setSidebarExpanded] = useState(true);
 
   const [approvalMenu, setApprovalMenu] = useState(false);
   const { dispatch } = React.useContext(AuthContext);
@@ -671,7 +669,7 @@ function SideBarAdmin({ sidebarOpen, setSidebarOpen }) {
                                     }
                                   >
                                     <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                                      Leave Request
+                                      Manage Leave Requests
                                     </span>
                                   </NavLink>
                                 </li>
@@ -767,7 +765,7 @@ function SideBarAdmin({ sidebarOpen, setSidebarOpen }) {
                                   }
                                 >
                                   <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                                    Events
+                                    Events Managment
                                   </span>
                                 </NavLink>
                                 <NavLink
@@ -779,7 +777,7 @@ function SideBarAdmin({ sidebarOpen, setSidebarOpen }) {
                                   }
                                 >
                                   <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                                    Leave Request
+                                  Manage Leave Requests
                                   </span>
                                 </NavLink>
                                 <NavLink

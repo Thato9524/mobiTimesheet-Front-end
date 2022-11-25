@@ -120,8 +120,9 @@ function AccountPanel() {
   };
   useEffect(async () => {
     setLoading(true);
+    let _id = localStorage.getItem("_id");
     let getData = await request.get(
-      `${config.path.profile.getProfile}`,
+      `${config.path.profile.getProfile}/${_id}`,
       true
     );
     let getStrengths = await request.get(config.path.getStrengths);

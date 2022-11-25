@@ -44,14 +44,6 @@ function SettingsSidebar() {
               <span className={`text-sm font-medium ${pathname.includes('/settings/plans') ? 'text-rose-500' : 'hover:text-slate-700'}`}>Support</span>
             </NavLink>
           </li>
-          <li className="mr-0.5 md:mr-0 md:mb-0.5">
-            <NavLink end to="/settings/patchNotes" className={`flex items-center px-2.5 py-2 rounded whitespace-nowrap ${pathname.includes('/settings/patchNotes') && 'bg-rose-50'}`}>
-              <svg className={`w-4 h-4 shrink-0 fill-current text-slate-400 mr-2 ${pathname.includes('/settings/patchNotes') && 'text-rose-500'}`} viewBox="0 0 16 16">
-                <path d="M15 4c.6 0 1 .4 1 1v10c0 .6-.4 1-1 1H3c-1.7 0-3-1.3-3-3V3c0-1.7 1.3-3 3-3h7c.6 0 1 .4 1 1v3h4zM2 3v1h7V2H3c-.6 0-1 .4-1 1zm12 11V6H2v7c0 .6.4 1 1 1h11zm-3-5h2v2h-2V9z" />
-              </svg>
-              <span className={`text-sm font-medium ${pathname.includes('/settings/patchNotes') ? 'text-rose-500' : 'text-slate-700'}`}>Patch Note</span>
-            </NavLink>
-          </li>
         </ul>
       </div>
       {/* Group 2 */}

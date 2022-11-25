@@ -23,8 +23,9 @@ function NotificationsPanel() {
   //REFRESH NOTIFICATIONS
   async function refreshNotifications() {
     setLoading(true);
+    let _id= localStorage.getItem("_id");
     const getUser = await request.get(
-      `${config.path.profile.getProfile}`
+      `${config.path.profile.getProfile}/${_id}`
     );
     resetState(getUser.isSubscribed);
     setLoading(false);

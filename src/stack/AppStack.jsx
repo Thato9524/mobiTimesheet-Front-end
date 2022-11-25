@@ -60,7 +60,7 @@ function AppStack() {
   }, [location.pathname]); // triggered on route change
 
 // calls both side bars
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
 
   return (
     <div className="flex h-screen overflow-hidden">
